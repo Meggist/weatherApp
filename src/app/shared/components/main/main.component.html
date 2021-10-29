@@ -1,0 +1,15 @@
+<p>main works!</p>
+
+<div class="form-group">
+  <label>Enter address</label>
+  <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" type="text" #search>
+</div>
+
+<ul style="display:flex;">
+  <li *ngFor="let coordinates of myCities" style="margin: 0 50px">
+    <app-weather-short-info
+      [cityCoordinates]="coordinates"
+    ></app-weather-short-info>
+  </li>
+</ul>
+
