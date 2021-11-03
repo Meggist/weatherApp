@@ -1,4 +1,4 @@
-import {Component, NgZone, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, NgZone, OnInit, ViewChild} from '@angular/core';
 import {MapsAPILoader} from "@agm/core";
 import {QueryParams} from "../../../core/interfaces/queryParams";
 import {FormControl} from "@angular/forms";
@@ -16,6 +16,7 @@ export class MainComponent implements OnInit {
     "name": "London"
   }]
   private geoCoder: any
+  public isFocusedSearch: boolean = true
 
   @ViewChild('search') searchElementRef: any
 
@@ -25,12 +26,16 @@ export class MainComponent implements OnInit {
   ) {
   }
 
+  searchBlur() {
+   this.isFocusedSearch = !this.searchElementRef.nativeElement.value;
+  }
+
   ngOnInit() {
     this.mapsAPILoader.load().then(() => {
       this.geoCoder = new google.maps.Geocoder;
       const options = {
         types: ['(cities)']
-      };
+      }
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, options)
       autocomplete.addListener("place_changed", () => {
         this.ngZone.run(() => {

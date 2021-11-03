@@ -1,11 +1,2 @@
 @import "assets/common";
-
-@font-face {
-  font-family: "Product Sans";
-  src: local("Product Sans"), url(./assets/fonts/Product-Sans/Product-Sans-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Product Sans Light";
-  src: local("Product Sans"), url(./assets/fonts/Product-Sans/ProductSans-Light.ttf) format("truetype");
-}
+@import "assets/typography.scss";

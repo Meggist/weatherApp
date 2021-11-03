@@ -13,9 +13,9 @@ export class WeatherService {
 
   }
 
-  convertKtoC(value: number): number | string {
-    let result: number | string = Math.floor(value - 273.15)
-    if (result > 0 ) {
+  convertTemperature(value: number): number | string {
+    let result: number | string = Math.round(value)
+    if (result > 0) {
       result = '+' + result
     }
     return result
@@ -25,13 +25,13 @@ export class WeatherService {
 
   getCityShortWeatherInfo(coordinates: QueryParams): Observable<ShortWeatherInfo> {
     return this.http
-      .get(`https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.latitude}&lon=${coordinates.latitude}&appid=${this.apiKey}`)
+      .get(`https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.latitude}&lon=${coordinates.longitude}&units=metric&appid=${this.apiKey}`)
       .pipe(map((data: any) => ({
         cityName: coordinates.name,
         description: coordinates.description,
-        currentTemp: this.convertKtoC(data.main.temp),
-        minTemp: this.convertKtoC(data.main.temp_min),
-        maxTemp: this.convertKtoC(data.main.temp),
+        currentTemp: this.convertTemperature(data.main.temp),
+        minTemp: this.convertTemperature(data.main.temp_min),
+        maxTemp: this.convertTemperature(data.main.temp_max),
         weatherType: data.weather[0].main
       })))
   }
