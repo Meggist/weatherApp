@@ -1,9 +1,24 @@
-<div *ngIf='info'>
-  <p>{{info.cityName}}</p>
-  <p>{{info.description}}</p>
-  <p>currentTemp: {{info.currentTemp}}</p>
-  <p>minTemp: {{info.minTemp}}</p>
-  <p>maxTemp: {{info.maxTemp}}</p>
-  <p>weatherType: {{info.weatherType}}</p>
+<div *ngIf='info' class="short-weather__card">
+  <img class="short-weather__icon" src="assets/images/night-clouds.png">
+  <div class="short-weather__container--center">
+    <div class="short-weather__name" #container>
+      <p #output style="word-break: break-all; word-wrap: break-word;">{{info.cityName}}</p>
+    </div>
+    <p class="short-weather__description">{{info.description}}</p>
+    <div class="short-weather__container--temp-edges">
+      <div class="temp-edges--container">
+        <p class="temp-edges--value">{{info.minTemp}}</p>
+        <p class="temp-edges--type">min</p>
+      </div>
+      <div class="temp-edges--container">
+        <p class="temp-edges--value">{{info.minTemp}}</p>
+        <p class="temp-edges--type">max</p>
+      </div>
+    </div>
+  </div>
+  <div class="short-weather__container--right">
+    <p class="short-weather__temp">{{info.currentTemp}}</p>
+    <p class="short-weather__type">{{info.weatherType}}</p>
+  </div>
 </div>
 

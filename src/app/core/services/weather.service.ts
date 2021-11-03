@@ -13,7 +13,13 @@ export class WeatherService {
 
   }
 
-  convertKtoC = (value: number) => Math.floor(value - 273.15)
+  convertKtoC(value: number): number | string {
+    let result: number | string = Math.floor(value - 273.15)
+    if (result > 0 ) {
+      result = '+' + result
+    }
+    return result
+  }
 
   private apiKey: string = "526db061ac165509c3068dd0a8ce8045"
 

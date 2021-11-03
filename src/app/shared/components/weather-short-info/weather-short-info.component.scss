@@ -1,0 +1,103 @@
+.short-weather__card {
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  width: 275px;
+  height: 111px;
+  background: rgba(71, 104, 124, 0.8);
+  backdrop-filter: blur(10px);
+  font-family: "Product Sans";
+}
+
+.short-weather__icon {
+  margin-left: 14px;
+  width: 75px;
+  height: 75px;
+}
+
+.short-weather__container--center {
+  display: flex;
+  flex-direction: column;
+  margin-left: 11px;
+  width: 75px;
+  height: 88px;
+}
+
+.short-weather__name {
+  width: 100%;
+  height: 27px;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 1px;
+  text-align: left;
+  color: white;
+}
+
+.short-weather__description {
+  margin-top: 2px;
+  max-width: 85px;
+  max-height: 15px;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  word-break: keep-all;
+  color: white;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+.short-weather__container--temp-edges {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  width: 75px;
+  height: 38px;
+}
+
+.temp-edges--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Product Sans Light";
+  font-size: 16px;
+  line-height: 19px;
+  color: #A8BCD9;
+}
+
+.temp-edges--value {
+  font-weight: 400;
+}
+
+.temp-edges--type {
+  font-family: "Product Sans Light";
+  font-weight: 300;
+}
+
+.short-weather__container--right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+  width: 46px;
+  height: 63px
+}
+
+.short-weather__temp {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: center;
+  color: white;
+}
+
+.short-weather__type {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: left;
+  color: white;
+}

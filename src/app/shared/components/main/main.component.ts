@@ -9,7 +9,12 @@ import {FormControl} from "@angular/forms";
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  myCities: QueryParams[] = []
+  myCities: QueryParams[] = [{
+    "latitude": 51.5072178,
+    "longitude": -0.1275862,
+    "description": "UK",
+    "name": "London"
+  }]
   private geoCoder: any
 
   @ViewChild('search') searchElementRef: any
